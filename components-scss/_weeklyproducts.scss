@@ -1,0 +1,223 @@
+.weeklyproducts{
+
+    @include flex-column();
+    gap: 2.5rem;
+    margin-bottom: rem(40px);
+    margin-top: rem(10px);
+ 
+//     @include vertical-padding(rem(40px));
+ 
+    @media(min-width:760px){
+        margin-bottom: rem(80px);
+ }
+
+ &__heading{
+    // font-size: rem(28px);
+    font-size: clamp(1rem, 2vw + 1rem, 1.7rem);
+    font-weight: 700;
+    line-height: 100%;
+    // margin-top: 20px;
+   }
+
+   &__cardcontainer{
+    @include flex-row(flex-start,stretch);
+    width: 100%;
+    overflow-x: scroll;
+     gap:1.5rem;
+    //  scrollbar-width: thin; 
+    //  scrollbar-color: #231F1E #f1f1f1; 
+  
+     .card{
+      min-width: 90vw;
+    //   width: rem(375px) ;
+        // background-color: rgb(232, 183, 183);
+        @include flex-column();
+        gap: rem(15px);
+
+        @media (min-width:333px) {
+            // min-width: rem(375px);  
+            min-width: 42.5vw;
+        }
+
+        @media (min-width:450px) {
+            // min-width: rem(375px);  
+            min-width: 44vw;
+        }
+        // @media (min-width:500px) {
+        //     // min-width: rem(375px);  
+        //     min-width: 90vw;
+        // }
+       
+        @media (min-width:730px) {
+            // min-width: rem(375px);  
+            min-width: 29.5vw;
+        }
+        &__top{
+                 background-color: $white-smoke;
+                 position: relative;
+                 border-radius: rem(10px);
+                overflow: hidden;
+                 text-align: center;
+                //  @include vertical-padding(rem(20px));
+
+                 &--imgmain{
+                max-width: 100%;
+                height: auto;
+                // scale: 1.2;
+                transition: 0.3s ease;
+                 }
+                 &--imgmain:hover{
+                    transform: scale(1.2);
+                    cursor: pointer;
+                 }
+                 &__imgsecondcontainer{
+                    width: rem(40px);
+                    height: rem(40px);
+                    background-color: $white;
+                    border-radius: rem(100px);
+                    justify-content: center;
+                    align-items: center;
+                    transition: all .2s;
+                    display: flex;
+                    position: absolute;
+                    top: rem(16px) ;
+                    bottom: auto;
+                    left: auto;
+                    right: rem(16px);
+                 }
+                 &__imgsecondcontainer:hover{
+                    background-color: rgb(255,208,224);
+                    cursor: pointer;
+                 }
+        }
+
+        &__content{
+            @include flex-column();
+            gap: rem(12px);
+            &__headprice{
+                justify-content: space-between;
+                align-items: center;
+                display: flex;
+                // font-size: rem(25px);
+                //  background-color: red;
+                &--heading{
+                    z-index: 1;
+                    color: $heading-color;
+                    // margin-top: 16px;
+                    // margin-bottom: 12px;
+                    font-family: Inter, sans-serif;
+                    // font-size: rem(23px);
+                    font-size: clamp(0.5rem ,1vw + 2rem,23px);
+                    font-weight: 600;
+                    @media (min-width:331px) {
+                        // min-width: rem(375px);  
+                  font-size: rem(15px);
+                    }
+                    @media (min-width:400px) {
+                        // min-width: rem(375px);  
+                        font-size: clamp(0.5rem ,1vw + 2rem,rem(18px));
+                    }
+                }
+                &__price{
+                    font-size: rem(15px);
+                    font-weight: 700;
+                    color: $heading-color;
+                    @media (min-width:331px) {
+                        // min-width: rem(375px);  
+                  font-size: rem(18px);
+                    }
+                    @media (min-width:400px) {
+                        // min-width: rem(375px);  
+                        font-size: clamp(0.5rem ,1vw + 2rem,rem(18px));
+                    }
+
+
+                    &--dollar{
+                        font-size: 13px;
+                        position: relative;
+                        top: -5px;
+                    }
+                    &--zero{
+                        font-size: 13px;
+                        position: relative;
+                        top: -5px;
+                    }
+                }
+            }
+            &__detail{
+                // margin-bottom: 10px;
+                font-size: rem(12px);
+                line-height: 16.5px;
+            }
+            &__rating{
+                @include flex-row(flex-start,flex-start);
+                // margin-bottom: 15px;
+                // background-color: red;
+                gap:0.2rem;
+                 &__starwrap{
+                    .product-star{
+                        width: rem(14px);
+                        height: auto;
+                    }
+                 }
+                &--value{
+                    margin-left: 5px;
+                    font-size: rem(11px);
+                    font-weight: 500;
+                    line-height: 100%;
+                }
+            }
+            &__buttoncontainer{
+                // border: 1px solid $heading-color;
+                //  padding: 12px 22px;
+                //  border-radius: 50px;
+                //  width: 100%;
+                //  height: 100%;
+                //  display: flex;
+                margin-bottom: rem(30px);
+                 
+                 &--button{
+                    border: 1px solid $heading-color;
+                    padding: 0.8vw 1.6vw;
+                    color: $heading-color;
+                    //    
+                    border-radius: rem(50px);
+                    
+                    
+                    display: flex;
+                    width: fit-content;
+                    font-size: rem(14px);
+                    font-weight: 600;
+
+                    @media(min-width: 380px){
+                   padding: 0.6rem 1.3rem;
+                    }
+           transition: 0.3s ease;
+                 }
+    &--button:hover{
+        background-color: $primary-color;
+        color: white;
+    }
+            }
+        }
+         
+       
+     }
+   }
+   &__cardcontainer::-webkit-scrollbar{
+    height: 4px;
+   
+   }
+   &__cardcontainer::-webkit-scrollbar-thumb {
+    background-color: #231F1E;
+        border-radius: 10px; 
+}
+&__cardcontainer::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+ 
+}
+
+
+
+
+}

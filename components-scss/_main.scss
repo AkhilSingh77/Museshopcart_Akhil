@@ -1,0 +1,14 @@
+.main{
+    @include horizontal-padding($mobile-padding-leftright);
+
+    @media(min-width:rem(767px)){
+        @include horizontal-padding(rem(20px));
+    }
+    @media (min-width: rem(991px)){
+        // padding-left: 40px;
+        // padding-right: 40px;
+        @include horizontal-padding($desktop-padding-leftright);
+       }
+       max-width: 1360px;
+   @include horizontal-margin(auto);
+}

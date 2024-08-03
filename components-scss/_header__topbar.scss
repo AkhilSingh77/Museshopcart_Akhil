@@ -1,0 +1,98 @@
+.header__topbar{
+  
+    background-color:$primary-color ;
+    // padding-top: 7px;
+    // padding-bottom: 7px;
+   @include vertical-padding(rem(10px));
+
+   @media (min-width:991px) {
+    @include vertical-padding(rem(8px));
+   }
+
+    .topbar{
+       
+        display: flex;
+            // flex-direction: column;
+        // background-color: red;
+        // justify-content: space-between;
+        @include flex-column(center,center);
+        gap: 0.6rem;
+        // align-items: center;
+        color: $white;
+        width: 100%;
+        @include horizontal-padding($mobile-padding-leftright);
+        @include horizontal-margin(auto);
+        // padding-left: rem(15px);
+        // padding-right:rem(15px);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: rem(12.5px);
+         @media (min-width:766px){
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-between;
+            @include flex-row(space-between,stretch);
+        //     padding-left: 40px;
+        // padding-right: 40px;
+
+         }
+        @media(min-width:991px) { 
+            @include horizontal-padding($desktop-padding-leftright); 
+        }
+        &__left{
+        //     display: flex;
+        // flex-direction: row; 
+        // align-items: center;
+        // justify-content: center;
+        @include flex-row(center,center);
+        gap: 0.3rem;
+
+        &--img{
+            width: rem(15px);
+        }
+        &--no{
+            font-size: rem(12px);
+        }
+
+        }
+        &__middle{
+            display: none;
+            font-size: rem(12.5px);
+            line-height: 140%;
+        @media (min-width: rem(465px)){
+            
+            display: flex;
+            flex-direction: row; 
+        
+         }
+        }
+        &__right{
+        //     display: flex;
+        // flex-direction: row;
+        @include flex-row();
+        gap: 2.5rem;
+        font-size: 12px;
+        
+        
+         &__language{
+            // display: flex;
+            // flex-direction: row;
+            
+            @include flex-row(center,center);
+            gap: 1.2rem;
+         }
+         &__location{
+           
+            @include flex-row(center,center);
+            gap: 1.2rem;
+            font-size: 12px;
+         }
+        }
+
+        &__right:hover{
+            cursor: pointer;
+        }
+        
+
+    }
+     
+}

@@ -1,0 +1,118 @@
+.header__main{
+    // display: flex;
+    // background-color: rgb(232, 183, 183);
+    // justify-content: space-between;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0);
+    // margin-left: auto;
+    // margin-right: auto;
+    @include horizontal-margin(auto);
+    // padding-top: 17px;
+    // padding-bottom: 17px;
+    @include vertical-padding(rem(17px));
+    // padding-left: 15px;
+    // padding-right: 15px;
+    @include horizontal-padding($mobile-padding-leftright);
+    // align-items: center;
+
+    @include flex-row(space-between,center);
+
+           @media (min-width: rem(1155px)){
+            // padding-left: 40px;
+            // padding-right: 40px;
+            @include horizontal-padding(rem(40px));
+           }
+
+           &__hamcontainer{
+            display: block;
+            @media (min-width:rem(1155px)){
+           display: none;
+            }
+           }
+    .nav{
+       
+    display: none;
+    @media (min-width:1155px){
+        // display: flex;
+        // align-items: flex-start;
+        @include flex-row(flex-start,flex-start);
+        gap: 1.8rem;
+        font-size: rem(17px);
+        font-weight: 400;
+        line-height: rem(20px);
+    font-weight: 400;
+     &__elements:hover{
+        color: gray;
+        cursor: pointer;
+     }
+    }
+
+    &__hamcontainer{
+     display: none;
+    }
+        &__1{
+            // display: flex;
+            gap: 0.6rem;
+            // align-items: center;
+            @include flex-row(flex-start , center)
+        }
+    }
+           
+    &__search{
+        
+   display: none;
+         @media (min-width:1155px) {
+            // display: flex;
+         position: relative;
+        //  align-items: center;
+         @include flex-row(flex-start,center)
+         }
+         
+        &--input{
+            border: 1px solid gray;
+            border-radius: rem(50px);
+            padding-right: 9rem;
+         padding-left: 1rem;
+            
+            @include vertical-padding(0.7rem)
+        }
+        &--input:focus{
+            border-color: red ;  
+        }
+        &--input::placeholder{
+            font-size: 14px;
+            color: rgb(158, 157, 157);
+        }
+        &--icon{
+            position: absolute;
+           right: rem(19px);
+           color: gray;
+        }
+
+    }
+    
+
+    &__right{
+        display: none;
+        gap: 2rem;
+
+        @media (min-width:rem(460px)) {
+            display: flex;
+        }
+        &__1{
+            @include flex-row(center,center);
+            gap: 0.6rem;
+            &--img{
+                height: rem(25px);
+
+            }
+        }
+        &__2{
+                @include flex-row(center,center);
+            gap: 0.6rem;
+            &--img{
+                height: rem(25px);
+            }
+        }
+    }
+}

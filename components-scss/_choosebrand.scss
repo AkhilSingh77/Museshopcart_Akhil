@@ -1,0 +1,89 @@
+.choosebrand{
+    
+    @include vertical-padding(rem(40px));
+ 
+    @media(min-width:760px){
+      @include vertical-padding(rem(80px));
+      gap:1rem;
+ }
+ 
+      
+     @include flex-column();
+     gap: 1.5rem;
+     @media (min-width:760px){
+         gap: 2.5rem;
+        }
+ 
+     &__heading{
+         font-size: clamp(1rem, 2vw + 1rem, 1.7rem);
+         font-weight: 700;
+         line-height: 100%;
+         margin-top: 20px;
+     }
+     &__brandcontainer{
+         display: grid;
+         grid-template-columns: 1fr;
+         // gap: 1.5rem;
+         row-gap:1.1rem;
+         column-gap: 1.3rem;
+ 
+         @media(min-width:460px){
+             grid-template-columns: 1fr 1fr;  
+             row-gap:1.5rem; 
+         }
+         @media(min-width:980px){
+             grid-template-columns: 1fr 1fr 1fr 1fr;   
+         }
+          .brand{
+             // background-color: rgb(220, 144, 144);
+             @include flex-row(flex-start,center);
+             gap: 1.2rem;
+             // padding: rem(15px);
+             @include vertical-padding(rem(13px));
+             @include horizontal-padding(rem(18px));
+             background-color:$white-smoke;
+             border: 1px solid $white-smoke;
+             border-radius: rem(10px);
+             transition: 0.5s ease;
+ 
+             @media (min-width:760px){
+         //    padding-left: rem(30px);
+         //    @include vertical-padding(rem(15px));
+                 padding-right: rem(35px);
+                 // gap: 1rem;
+                }
+ 
+                &--image{
+                 scale: 1;
+                 // @media (min-width:900px){
+                 //     scale: 1.25;
+                 // }
+                }
+ 
+             &__content{
+                    @include flex-column();
+                    gap: rem(10px);
+ 
+                    &--name{
+                     color:#333;
+                     font-weight: 600;
+                     font-size: rem(18px);
+                     @media (min-width:760px){
+                         font-size: rem(18px);
+                        }
+                    }
+                    &--delivery{
+                     font-size: rem(13px);
+                     color: #333;
+                     font-weight: 500;
+                     @media (min-width:760px){
+                         font-size: rem(14px);
+                        }
+                    }
+             }
+          }
+          .brand:hover{
+             border: 1px solid black;
+          }
+     }
+ }
